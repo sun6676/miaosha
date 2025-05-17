@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.mapper.userMapper.UserMapper">
+
+    <insert id="insert" parameterType="User" keyProperty="id">
+        insert into user(user_id, user_name, user_password, user_email) values(null, #{name}, #{password}, #{email})
+    </insert>
+
+    <select id="findAll" resultType="User">
+        select * from user
+    </select>
+
+    <select id="selectname" resultType="User">
+        select * from user where user_name = #{name}
+    </select>
+
+    <select id="selectemail" resultType="User">
+        SELECT * FROM user WHERE user_email = #{email}
+    </select>
+</mapper>

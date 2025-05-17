@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>注册用户</title>
+</head>
+<body>
+<h1>注册用户</h1>
+<form th:action="@{/saveUser}" th:object="${user}" method="post">
+    <p>姓名: <input type="text" th:field="*{name}" /></p>
+    <p>密码: <input type="password" th:field="*{password}" /></p>
+    <p>邮箱: <input type="email" th:field="*{email}" /></p>
+    <p><input type="submit" value="提交" /> <input type="reset" value="重置" /></p>
+</form>
+</body>
+</html>

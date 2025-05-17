@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mydata
+    username: root
+    password: 123456
+  redis:
+    data:
+      host: 127.0.0.1
+      port: 6379
+      password: 123456
+      lettuce:
+        pool:
+          max-active: 200
+
+  thymeleaf:
+    prefix:
+      classpath:/templates/
+    suffix:
+      .html
+
+mybatis:
+  type-aliases-package: com.example.demo.pojo
+  mapper-locations: classpath:/mapper/*.xml
